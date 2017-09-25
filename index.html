@@ -9,6 +9,89 @@
 <link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
 <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.js"></script>
+<style>
+    .sortable_component li {
+        position: relative;
+    }
+    .sortable_component .sortable_container,
+    .sortable_component .sortable_add {
+        display: inline-block;
+    }
+    .sortable_close {
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #999;
+    }
+    .sortable_close::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 18px;
+        height: 2px;
+        margin: auto;
+        background: #fff;
+        /*border-left: solid 3px #ddd;*/
+        /*border-right: solid 3px #ddd;*/
+        transform: rotate(45deg);
+    }
+    .sortable_close::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 2px;
+        height: 18px;
+        margin: auto;
+        background: #fff;
+        /*border-top: solid 3px #ddd;*/
+        /*border-bottom: solid 3px #ddd;*/
+        transform: rotate(45deg);
+    }
+    .sortable_add {
+        position: relative;
+        background: #999;
+    }
+    .items.sortable_add {
+        width: 30px;
+        height: 50px;
+    }
+    .list.sortable_add {
+        width: 100%;
+        height: 30px;
+    }
+    .sortable_add::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 18px;
+        height: 2px;
+        margin: auto;
+        background: #fff;
+    }
+    .sortable_add::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 2px;
+        height: 18px;
+        margin: auto;
+        background: #fff;
+    }
+</style>
 </head>
 <body>
     <div class="sortable_component">
@@ -17,18 +100,32 @@
                 <div class="sortable_container">
                     <span class="keys">
                         <span>A</span>
-                        <div class="sortable_close"> x </div>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
                     </span>
                     <span class="keys">
                         <span>B</span>
-                        <div class="sortable_close"> x </div>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
                     </span>
                 </div>
-                <div class="sortable_add"> + </div>
-                <div class="sortable_close"> x </div>
+                <div class="items sortable_add"></div>
+                <a href="javascript:void(0);" class="sortable_close"></a>
+            </li>
+            <li>
+                <div class="sortable_container">
+                    <span class="keys">
+                        <span>A</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keys">
+                        <span>B</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                </div>
+                <div class="items sortable_add"></div>
+                <a href="javascript:void(0);" class="sortable_close"></a>
             </li>
         </ul>
-        <div class="sortable_add"> + </div>
+        <div class="list sortable_add"></div>
     </div>
 </body>
 </html>
