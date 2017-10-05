@@ -7,15 +7,55 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.0/pure.css">
 <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset200802.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.6.0/Sortable.js"></script>
 <style>
+.keycaps_s {
+    font-size: .75rem;
+    border: 1px solid #aaa;
+    border-right: solid 1px #aaa;
+    border-bottom: solid 1px #aaa;
+    box-sizing: border-box;
+    margin: 0 1px 1px 0;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    padding-top: .8em;
+    text-align: center;
+    word-break: break-word;
+    background: #fff;
+}
+.keycap_s_1_5 {
+    width: calc((52px + 1px) *1.5 - 1px);
+    height: 52px;
+}
+.hide {
+    display: none !important;
+}
+</style>
+<style>
+    .sortable_component {
+        padding: 1rem;
+        width: calc(((52px + 1px) *1.5 - 1px)*5);
+    }
     .sortable_component li {
         position: relative;
+        margin-top: 24px;
+        background: #eee;
+    }
+    .sortable_component li:hover {
+        cursor: move;
     }
     .sortable_component .sortable_container,
     .sortable_component .sortable_add {
         display: inline-block;
+    }
+    .sortable_component .sortable_container .sortable_close {
+        z-index: 1;
+        position: absolute;
+        top: calc(-24px/2);
+        right: calc(-24px/2);
     }
     .sortable_close {
         position: relative;
@@ -23,7 +63,10 @@
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        background: #999;
+        background: #e66465;
+    }
+    .sortable_close:hover {
+        box-shadow: 1px 1px 3px 1px rgba(0,0,0,.5);
     }
     .sortable_close::before {
         content: '';
@@ -55,17 +98,30 @@
         /*border-bottom: solid 3px #ddd;*/
         transform: rotate(45deg);
     }
+    .sortable_list_close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        margin-right: calc(24px/2);
+    }
     .sortable_add {
         position: relative;
-        background: #999;
+        background: #52E052;
+    }
+    .sortable_add:hover {
+        box-shadow: 1px 1px 3px 1px rgba(0,0,0,.5);
     }
     .items.sortable_add {
         width: 30px;
-        height: 50px;
+        height: 52px;
     }
     .list.sortable_add {
         width: 100%;
         height: 30px;
+        margin-top: 24px;
     }
     .sortable_add::before {
         content: '';
@@ -96,36 +152,191 @@
 <body>
     <div class="sortable_component">
         <ul>
-            <li>
-                <div class="sortable_container">
-                    <span class="keys">
+            <li class="pure-g">
+                <div class="sortable_container pure-g">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
                         <span>A</span>
                         <a href="javascript:void(0);" class="sortable_close"></a>
                     </span>
-                    <span class="keys">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
                         <span>B</span>
                         <a href="javascript:void(0);" class="sortable_close"></a>
                     </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>C</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>D</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
                 </div>
-                <div class="items sortable_add"></div>
-                <a href="javascript:void(0);" class="sortable_close"></a>
+                <a href="javascript:void(0);" class="items sortable_add pure-u"></a>
+                <a href="javascript:void(0);" class="sortable_close sortable_list_close"></a>
             </li>
-            <li>
-                <div class="sortable_container">
-                    <span class="keys">
+            <li class="pure-g">
+                <div class="sortable_container pure-g">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
                         <span>A</span>
                         <a href="javascript:void(0);" class="sortable_close"></a>
                     </span>
-                    <span class="keys">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>B</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>C</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>D</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="items sortable_add pure-u hide"></a>
+                <a href="javascript:void(0);" class="sortable_close sortable_list_close"></a>
+            </li>
+            <li class="pure-g">
+                <div class="sortable_container pure-g">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>A</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>B</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>C</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="items sortable_add pure-u"></a>
+                <a href="javascript:void(0);" class="sortable_close sortable_list_close"></a>
+            </li>
+            <li class="pure-g">
+                <div class="sortable_container pure-g">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>A</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
                         <span>B</span>
                         <a href="javascript:void(0);" class="sortable_close"></a>
                     </span>
                 </div>
-                <div class="items sortable_add"></div>
-                <a href="javascript:void(0);" class="sortable_close"></a>
+                <a href="javascript:void(0);" class="items sortable_add pure-u"></a>
+                <a href="javascript:void(0);" class="sortable_close sortable_list_close"></a>
+            </li>
+            <li class="pure-g">
+                <div class="sortable_container pure-g">
+                    <span class="keycaps_s keycap_s_1_5 pure-u">
+                        <span>A</span>
+                        <a href="javascript:void(0);" class="sortable_close"></a>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="items sortable_add pure-u"></a>
+                <a href="javascript:void(0);" class="sortable_close sortable_list_close"></a>
             </li>
         </ul>
-        <div class="list sortable_add"></div>
+        <a href="javascript:void(0);" class="list sortable_add"></a>
     </div>
 </body>
+<script>
+var el = document.querySelector('.sortable_component ul');
+var sortable = Sortable.create(el);
+
+// var sortable = new Sortable(el, {
+//     group: "name",  // or { name: "...", pull: [true, false, clone], put: [true, false, array] }
+//     sort: true,  // sorting inside list
+//     delay: 0, // time in milliseconds to define when the sorting should start
+//     disabled: false, // Disables the sortable if set to true.
+//     store: null,  // @see Store
+//     animation: 150,  // ms, animation speed moving items when sorting, `0` — without animation
+//     handle: ".my-handle",  // Drag handle selector within list items
+//     filter: ".ignore-elements",  // Selectors that do not lead to dragging (String or Function)
+//     preventOnFilter: true, // Call `event.preventDefault()` when triggered `filter`
+//     draggable: ".item",  // Specifies which items inside the element should be draggable
+//     ghostClass: "sortable-ghost",  // Class name for the drop placeholder
+//     chosenClass: "sortable-chosen",  // Class name for the chosen item
+//     dragClass: "sortable-drag",  // Class name for the dragging item
+//     dataIdAttr: 'data-id',
+
+//     forceFallback: false,  // ignore the HTML5 DnD behaviour and force the fallback to kick in
+
+//     fallbackClass: "sortable-fallback",  // Class name for the cloned DOM Element when using forceFallback
+//     fallbackOnBody: false,  // Appends the cloned DOM Element into the Document's Body
+//     fallbackTolerance: 0, // Specify in pixels how far the mouse should move before it's considered as a drag.
+
+//     scroll: true, // or HTMLElement
+//     scrollFn: function(offsetX, offsetY, originalEvent) { ... }, // if you have custom scrollbar scrollFn may be used for autoscrolling
+//     scrollSensitivity: 30, // px, how near the mouse must be to an edge to start scrolling.
+//     scrollSpeed: 10, // px
+
+//     setData: function (/** DataTransfer */dataTransfer, /** HTMLElement*/dragEl) {
+//         dataTransfer.setData('Text', dragEl.textContent); // `dataTransfer` object of HTML5 DragEvent
+//     },
+
+//     // Element is chosen
+//     onChoose: function (/**Event*/evt) {
+//         evt.oldIndex;  // element index within parent
+//     },
+
+//     // Element dragging started
+//     onStart: function (/**Event*/evt) {
+//         evt.oldIndex;  // element index within parent
+//     },
+
+//     // Element dragging ended
+//     onEnd: function (/**Event*/evt) {
+//         var itemEl = evt.item;  // dragged HTMLElement
+//         evt.to;    // target list
+//         evt.from;  // previous list
+//         evt.oldIndex;  // element's old index within old parent
+//         evt.newIndex;  // element's new index within new parent
+//     },
+
+//     // Element is dropped into the list from another list
+//     onAdd: function (/**Event*/evt) {
+//         // same properties as onEnd
+//     },
+
+//     // Changed sorting within list
+//     onUpdate: function (/**Event*/evt) {
+//         // same properties as onEnd
+//     },
+
+//     // Called by any change to the list (add / update / remove)
+//     onSort: function (/**Event*/evt) {
+//         // same properties as onEnd
+//     },
+
+//     // Element is removed from the list into another list
+//     onRemove: function (/**Event*/evt) {
+//         // same properties as onEnd
+//     },
+
+//     // Attempt to drag a filtered element
+//     onFilter: function (/**Event*/evt) {
+//         var itemEl = evt.item;  // HTMLElement receiving the `mousedown|tapstart` event.
+//     },
+
+//     // Event when you move an item in the list or between lists
+//     onMove: function (/**Event*/evt, /**Event*/originalEvent) {
+//         // Example: http://jsbin.com/tuyafe/1/edit?js,output
+//         evt.dragged; // dragged HTMLElement
+//         evt.draggedRect; // TextRectangle {left, top, right и bottom}
+//         evt.related; // HTMLElement on which have guided
+//         evt.relatedRect; // TextRectangle
+//         originalEvent.clientY; // mouse position
+//         // return false; — for cancel
+//     },
+
+//     // Called when creating a clone of element
+//     onClone: function (/**Event*/evt) {
+//         var origEl = evt.item;
+//         var cloneEl = evt.clone;
+//     }
+// });
+</script>
 </html>
