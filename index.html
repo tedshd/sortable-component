@@ -42,10 +42,44 @@
     .sortable_component li {
         position: relative;
         margin-top: 24px;
-        background: #eee;
+        background: #ddd;
     }
     .sortable_component li:hover {
         cursor: move;
+    }
+    .sortable_component li:last-of-type:before {
+        content: '';
+        display: none;
+    }
+    .sortable_component li:last-of-type:after {
+        content: '';
+        display: none;
+    }
+    .sortable_component li:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 18px;
+        height: 2px;
+        margin: auto;
+        margin-top: calc(52px + 24px/2);
+        background: #ddd;
+    }
+    .sortable_component li:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 2px;
+        height: 18px;
+        margin: auto;
+        margin-top: calc(52px + 24px/4);
+        background: #ddd;
     }
     .sortable_component .sortable_container,
     .sortable_component .sortable_add {
@@ -117,6 +151,7 @@
     .items.sortable_add {
         width: 30px;
         height: 52px;
+        /*margin-left: 1rem;*/
     }
     .list.sortable_add {
         width: 100%;
@@ -338,5 +373,10 @@ var sortable = Sortable.create(el);
 //         var cloneEl = evt.clone;
 //     }
 // });
+
+TEX = {
+    'DATA': {}
+};
+TEX.DATA.MARCO = [];
 </script>
 </html>
